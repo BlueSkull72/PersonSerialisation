@@ -12,6 +12,31 @@ namespace PersonSerialisation
         static void Main(string[] args)
         {
             RunInit();
+            ChoiceScreen();
+            Console.ReadKey(true);
+        }
+
+        private static void ChoiceScreen()
+        {
+            bool noChoice = true;
+            while (noChoice)
+            {
+                Console.WriteLine("Do you wish to Add or View a registry?");
+                string choice = Console.ReadLine().Trim().ToLower();
+                switch (choice)
+                {
+                    case "add":
+                        Maternity.Add();
+                        noChoice = false;
+                        break;
+                    case "view":
+                        CivilService.Get();
+                        noChoice = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private static void RunInit()

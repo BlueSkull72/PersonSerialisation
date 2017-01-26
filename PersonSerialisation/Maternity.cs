@@ -10,9 +10,9 @@ namespace PersonSerialisation
 {
     class Maternity
     {
-        private string pathMaternity = @"C:\temp\data\PersonSerialisation\Maternity.txt";
-        BinaryFormatter binaryFormatterPersons = new BinaryFormatter();
-        public void Add()
+        private static string pathMaternity = @"C:\temp\data\PersonSerialisation\Maternity.txt";
+        private static BinaryFormatter binaryFormatterPersons = new BinaryFormatter();
+        public static void Add()
         {
             Console.WriteLine("What is the first name of the newborn?");
             string firstName = Console.ReadLine().Trim();
